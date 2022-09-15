@@ -36,5 +36,12 @@ module QuizApp
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.action_mailer.default_options = { from: 'noreply@example.com' }
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+    config.generators do |gen|
+      gen.test_framework :rspec
+      gen.fixture_replacement :factory_bot, dir: 'spec/factories'
+    end
   end
 end
